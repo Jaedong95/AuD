@@ -69,6 +69,30 @@ class BertClsTester():
             labels.extend(label)
         return preds, labels 
     
+    def get_att_toks(self, input_text, tokenizer, model):
+        input_text = input_text.replace("'m", " am").replace('.', ' ').replace(',', ' ')
+        print(input_text)
+        inputs = tokenizer.encode(input_text, return_tensors='pt').to(self.training_config.device)
+        # print(len(inputs[0]), inputs)
+        num_words = len(inputs[0]) // 3 
+        outputs = model(inputs)  # Run model
+        att_metrics = outputs.attentions[-1][0]
+        att_sum = list(map(sum, att_metrics))
+        sorted_att = sum(att_sum).sort(descending=True)
+        
+        cnt = 0 
+        tok_idx = []
+        for idx in range(len(inputs[0])):
+            if inputs[0][sorted_att.indices[idx]] == 101 or inputs[0][sorted_att.indices[idx]] == 102:
+                continue
+            tok_idx.append(sorted_att.indices[idx])
+            cnt += 1
+            if cnt == num_words:
+                break 
+        
+        tok_list = [tokenizer.decode(inputs[0][int(tok)]) for tok in tok_idx]
+        return tok_list
+    
     def get_f1_score(self, test_dataloader):
         y_pred, y_true = self.get_label(test_dataloader)
         return round(f1_score(y_true, y_pred, average='micro'), 3) 
