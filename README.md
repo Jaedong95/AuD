@@ -8,12 +8,12 @@ _Model Architecture_
 
 ***
 ### 1. How to use 
-#### 1) Curate data  
+##### 1) Curate data  
 ###### we process reddit data in this repository: https://github.com/Jaedong95/Reddit
 ###### using dataset2.csv, we construct bws, dsm-5 data respectively 
 
 
-#### 2) Train model 
+##### 2) Train model 
 ###### We train BWS & DSM-5 model 
 ```bash 
 # train bws model 
@@ -23,7 +23,7 @@ $ python bws-train.py --data_path {$DATA_PATH} --base_model {$BASE_MODEL_PATH} -
 $ python dsm-train.py --data_path {$DATA_PATH} --base_model {$BASE_MODEL_PATH} --model_path {$MODEL_PATH} --config_path {$CONFIG_PATH} --config_file {$CONFIG_FILE} --log_path {$LOG_PATH}
 ```
 
-#### 3) Service model 
+##### 3) Service model 
 ###### We anaylze user input sentence (service type: 0) and data file (service type: 1) 
 ```bash
 $ python aud-service.py --base_model {$BASE_MODEL_PATH} --model_path {$MODEL_PATH} --config_path {$CONFIG_PATH} --config_file {$CONFIG_FILE} --data_path {$DATA_PATH} --db_config {$DB_CONFIG} --service_type {$SERVICE_TYPE}
