@@ -9,16 +9,18 @@ _Model Architecture_
 ***
 ### 1. How to use 
 #### 1) Curate data  
-we process reddit data in this repository: https://github.com/Jaedong95/Reddit
+##### we process reddit data in this repository: https://github.com/Jaedong95/Reddit
 
-using dataset2.csv, we construct bws, dsm-5 data respectively 
+##### using dataset2.csv, we construct bws, dsm-5 data respectively 
 
 
 #### 2) Train model 
 We train BWS & DSM-5 model 
 ```bash 
+# train bws model 
 $ python bws-train.py --data_path {$DATA_PATH} --base_model {$BASE_MODEL_PATH} --model_path {$MODEL_PATH} --config_path {$CONFIG_PATH} --config_file {$CONFIG_FILE} --log_path {$LOG_PATH}
 
+# train dsm-5 model 
 $ python dsm-train.py --data_path {$DATA_PATH} --base_model {$BASE_MODEL_PATH} --model_path {$MODEL_PATH} --config_path {$CONFIG_PATH} --config_file {$CONFIG_FILE} --log_path {$LOG_PATH}
 ```
 
