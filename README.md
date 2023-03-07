@@ -31,9 +31,10 @@ $ python aud-service.py --base_model {$BASE_MODEL_PATH} --model_path {$MODEL_PAT
 
 ### 2. Test Performance 
 ##### 1) BWS 
---|rmse|R2|
-|tiny|
-|mini|
+| |rmse|R2|
+|---------|
+|tiny|----|
+|mini|----|
 
 tiny
 
