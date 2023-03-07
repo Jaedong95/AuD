@@ -33,8 +33,11 @@ $ python aud-service.py --base_model {$BASE_MODEL_PATH} --model_path {$MODEL_PAT
 ##### 1) BWS 
 | |rmse|R2|
 |---|---|---|
-|tiny|---|
-|mini|---|
+|tiny|---|---|
+|mini|---|---|
+|small|---|---|
+|medium|---|---|
+|base|---|---|
 
 tiny
 
