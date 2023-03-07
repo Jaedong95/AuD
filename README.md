@@ -17,9 +17,9 @@ using dataset2.csv, we construct bws, dsm-5 data respectively
 #### 2) Train model 
 We train BWS & DSM-5 model 
 ```bash 
-$ python bws-train.py --data_path {$DATA_PATH} --base_model {$BASE_MODEL_PATH} --model_path {$MODEL_PATH} --config_path {$CONFIG_PATH} --log_path {$LOG_PATH} --config_file {$CONFIG_FILE}
+$ python bws-train.py --data_path {$DATA_PATH} --base_model {$BASE_MODEL_PATH} --model_path {$MODEL_PATH} --config_path {$CONFIG_PATH} --config_file {$CONFIG_FILE} --log_path {$LOG_PATH}
 
-$ python dsm-train.py --data_path {$DATA_PATH} --base_model {$BASE_MODEL_PATH} --model_path {$MODEL_PATH} --config_path {$CONFIG_PATH} --log_path {$LOG_PATH} --config_file {$CONFIG_FILE}
+$ python dsm-train.py --data_path {$DATA_PATH} --base_model {$BASE_MODEL_PATH} --model_path {$MODEL_PATH} --config_path {$CONFIG_PATH} --config_file {$CONFIG_FILE} --log_path {$LOG_PATH}
 ```
 
 #### 3) Service model 
