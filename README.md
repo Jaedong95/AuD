@@ -9,9 +9,8 @@ _Model Architecture_
 ***
 ### 1. How to use 
 #### 1) Curate data  
-##### we process reddit data in this repository: https://github.com/Jaedong95/Reddit
-
-##### using dataset2.csv, we construct bws, dsm-5 data respectively 
+###### we process reddit data in this repository: https://github.com/Jaedong95/Reddit
+###### using dataset2.csv, we construct bws, dsm-5 data respectively 
 
 
 #### 2) Train model 
