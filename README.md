@@ -36,7 +36,7 @@ $ python aud-service.py --base_model {$BASE_MODEL_PATH} --model_path {$MODEL_PAT
 |---|---|---|
 |tiny|2.7826|0.6774|
 |mini|2.2721|0.7849|
-|small|2.1586|0.8059|
+|**small|2.1586|0.8059**|
 |medium|2.2901|0.7815|
 |base|2.2138|0.7958|
 
@@ -44,7 +44,7 @@ $ python aud-service.py --base_model {$BASE_MODEL_PATH} --model_path {$MODEL_PAT
 | |precision|recall|specificity|F1|
 |---|---|---|---|---|
 |tiny|0.9927|0.995|0.9991|0.9933|
-|mini|0.9951|0.997|0.9996|0.9967|
+|**mini|0.9951|0.997|0.9996|0.9967**|
 |small|0.9939|0.997|0.9995|0.9961|
 |medium|0.9934|0.987|0.9994|0.9952|
 |base|0.9928|0.989|0.9989|0.9914|
