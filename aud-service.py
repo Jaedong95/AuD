@@ -11,12 +11,16 @@ from src import AuDDB
 
 def main(args):
     global training_config 
+    
+    '''
+    # load database config 
     with open(os.path.join(args.config_path, args.db_config)) as f:
         db_config = AttrDict(json.load(f))
 
     aud_db = AuDDB(db_config)
-    aud_db.connect()
-    
+    aud_db.connect()   # connect database 
+    '''
+   
     with open(os.path.join(args.config_path, args.config_file)) as f:
         training_config = AttrDict(json.load(f))
     
@@ -69,8 +73,8 @@ def main(args):
     flag = 0 
     user = input('who are you ? ')   # save user name 
     
-    while flag == 0: 
-        if args.service_type == 0: 
+    while flag == 0:    # run loop 
+        if args.service_type == 0:    # single sentence analyze   
             print(f'Analyzing single sentence ... ')
             print(f'If you want to exit, enter 1')
             input_text = input(f'Please input text: ')
@@ -93,8 +97,8 @@ def main(args):
                 tokens = dsm_tester.get_att_toks(input_text, dsm_tokenizer, dsm_model)
                 tokens = ', '.join(tokens)
                 now = datetime.now()
-                aud_db.save_aud_log(user, input_text, bws_score, dsm_label, tokens, now)
-        if args.service_type == 1: 
+                # aud_db.save_aud_log(user, input_text, bws_score, dsm_label, tokens, now)
+        if args.service_type == 1:    # data file analyze 
             print('Analayzing data file... file name: user_input.csv')
             data = pd.read_csv(os.path.join(training_config.data_path, 'user_input.csv'))
             data['user'] = user
