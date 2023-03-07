@@ -23,7 +23,7 @@ $ python dsm-train.py --data_path {$DATA_PATH} --base_model {$BASE_MODEL_PATH} -
 ```
 
 #### 3) Service model 
-We anaylze user input sentence & data file 
+We anaylze user input sentence (service type: 0) and data file (service type: 1) 
 ```bash
 $ python aud-service.py --base_model {$BASE_MODEL_PATH} --model_path {$MODEL_PATH} --config_path {$CONFIG_PATH} --config_file {$CONFIG_FILE} --data_path {$DATA_PATH} --db_config {$DB_CONFIG} --service_type {$SERVICE_TYPE}
 ```
