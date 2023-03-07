@@ -8,7 +8,8 @@ _Model Architecture_
 
 ***
 ### 1. How to use 
-#### 1) Data Curate & Construct 
+#### 1) Data curate 
+we process data and construct bws, dsm-5 data in this repository   
 https://github.com/Jaedong95/Reddit
 
 #### 2) Train model 
