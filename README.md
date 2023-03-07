@@ -1,2 +1,2 @@
 # AuD (Are You Depressed ?)
-Codes related to depression analysis 
+AuD is model that analyze sentence and return depression intensity, related emotions, attention tokens 
