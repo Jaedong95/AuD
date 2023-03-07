@@ -6,7 +6,8 @@ We use language models to learn BWS and DSM-5 data built by refining data collec
 [Model Architecture]   
 ![model architecture](https://user-images.githubusercontent.com/48609095/223356781-7e6dd680-9f92-4583-96bd-de4865ff857d.PNG)
 
-### 0. How to use 
+***
+### 1. How to use 
 #### 1) Data Curate & Construct 
 https://github.com/Jaedong95/Reddit
 
