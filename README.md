@@ -29,6 +29,17 @@ $ python dsm-train.py --data_path {$DATA_PATH} --base_model {$BASE_MODEL_PATH} -
 $ python aud-service.py --base_model {$BASE_MODEL_PATH} --model_path {$MODEL_PATH} --config_path {$CONFIG_PATH} --config_file {$CONFIG_FILE} --data_path {$DATA_PATH} --db_config {$DB_CONFIG} --service_type {$SERVICE_TYPE}
 ```
    
+| |input text|intensity(0~16)|dsm label|tokens|
+|---|---|---|---|---|
+|1|hey|0|daily|hey|
+|2|who are you ?|0|daily|?, you|
+|3|I feel depressed|13|depressed|depressed|
+|4|I can not sleep well these days|0|sleep disorder|sleep, not, can|
+|5|I gonna die|0|suicidal thoughts|gonna|
+
+* we only tagged a1 category to bws data so other category's intensity is incorrect. 
+
+   
 ### 2. Evaluate Score 
 ###### we evaluate score using bws test data, dsm-5 test data   
 
