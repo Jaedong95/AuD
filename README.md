@@ -10,7 +10,12 @@ _Model Architecture_
 ### 1. How to use 
 ##### 1) Curate data  
 ###### we process reddit data in this repository: https://github.com/Jaedong95/Reddit
-###### using dataset2.csv, we construct bws, dsm-5 data respectively 
+###### we construct bws data in this repository: https://github.com/Jaedong95/BWS-Tagging
+
+```bash
+# construct dsm-5 data 
+$ python 
+```
 
 
 ##### 2) Train model 
