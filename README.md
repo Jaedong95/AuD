@@ -40,7 +40,7 @@ $ python aud-service.py --base_model {$BASE_MODEL_PATH} --model_path {$MODEL_PAT
 
 ###### ! we only tagged a1 category to bws data so other category's intensity is incorrect.  
    
-   
+***
 ### 2. Evaluate Score 
 ###### we evaluate score using bws test data, dsm-5 test data   
 
