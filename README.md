@@ -37,7 +37,7 @@ $ python aud-service.py --base_model {$BASE_MODEL_PATH} --model_path {$MODEL_PAT
 |4|I can not sleep well these days|0|sleep disorder|sleep, not, can|
 |5|I gonna die|0|suicidal thoughts|gonna|
 
-* we only tagged a1 category to bws data so other category's intensity is incorrect. 
+###### '*' we only tagged a1 category to bws data so other category's intensity is incorrect.  
 
    
 ### 2. Evaluate Score 
