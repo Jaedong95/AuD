@@ -34,6 +34,7 @@ $ python aud-service.py --base_model {$BASE_MODEL_PATH} --model_path {$MODEL_PAT
 |1|hey|0|daily|hey|
 |2|who are you ?|0|daily|?, you|
 |3|I feel depressed|13|depressed|depressed|
+|4|I don't know why but just depressed|10|depressed|depressed|
 |4|I can not sleep well these days|0|sleep disorder|sleep, not, can|
 |5|I gonna die|0|suicidal thoughts|gonna|
 
