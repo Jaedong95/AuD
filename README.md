@@ -35,7 +35,7 @@ $ python dsm-train.py --data_path {$DATA_PATH} --base_model {$BASE_MODEL_PATH} -
 ```bash
 $ python aud-service.py --base_model {$BASE_MODEL_PATH} --model_path {$MODEL_PATH} --config_path {$CONFIG_PATH} --config_file {$CONFIG_FILE} --data_path {$DATA_PATH} --db_config {$DB_CONFIG} --service_type {$SERVICE_TYPE}
 ```
-   
+##### This is an example of virtual conversation prediction 
 | |input text|intensity(0~16)|dsm label|tokens|
 |---|---|---|---|---|
 |1|hey|0|daily|hey|
