@@ -1,7 +1,7 @@
 # AuD (Are You Depressed ?)
 AuD is model that analyze sentence and return depression intensity, related emotions, attention tokens 
 
-###### We use language models to learn BWS and DSM-5 data built by refining data collected from Reddit Archive and AI-Hub.   
+##### We use language models to learn BWS and DSM-5 data built by refining data collected from Reddit Archive and AI-Hub.   
 ###### BWS model: depression intensity prediction 
 ###### DSM-5 model: detailed depression emotion classification.
 
@@ -21,7 +21,6 @@ $ python
 
 
 ##### 2) Train model 
-###### We train BWS & DSM-5 model 
 ```bash 
 # train bws model 
 $ python bws-train.py --data_path {$DATA_PATH} --base_model {$BASE_MODEL_PATH} --model_path {$MODEL_PATH} --config_path {$CONFIG_PATH} --config_file {$CONFIG_FILE} --log_path {$LOG_PATH}
