@@ -73,7 +73,7 @@ class BertRegTrainer():
                 loss.backward()
                 
                 train_loss += loss.item()
-                torch.nn.utils.clip_grad_norm_(self.model.parameters(), self.training_config.max_grad_norm)
+                # torch.nn.utils.clip_grad_norm_(self.model.parameters(), self.training_config.max_grad_norm)
                 optimizer.step()
                 scheduler.step()
                 
@@ -129,7 +129,7 @@ class BertRegTrainer():
 
 
 class BertClsTrainer():
-    def __init__(self, config, training_config, model, train_dataloader, eval_dataloader, label_name, model_name):
+    def __init__(self, config, training_config, model, train_dataloader, eval_dataloader):
         self.config = config
         self.training_config = training_config
         self.model = model

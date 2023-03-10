@@ -1,6 +1,11 @@
+import os 
 import torch
 from torch.utils.data import Dataset, DataLoader, RandomSampler, SequentialSampler
 from torch.utils.data import TensorDataset
+from nltk.tokenize import word_tokenize
+from gensim.models import KeyedVectors
+from gensim.models import Word2Vec
+
 
 class BertDataset(Dataset):
     def __init__(self, data_file):
@@ -81,3 +86,30 @@ class BertProcessor():
         
     def load_data(self, dataset, sampler):
         return DataLoader(dataset, sampler=sampler, batch_size=self.batch_size)
+
+
+class AuDWord2Vec():
+    def __init__(self, model_path):
+        self.model_path = model_path 
+
+    def train_word2vec(self, col, aud_df):
+        token_list = [word_tokenize(sentence) for sentence in aud_df[col].values.tolist()]
+        self.model = Word2Vec(sentences=token_list, vector_size=100, window=5, min_count=5, workers=8, sg=0)
+        
+    def save_word2vec(self, filename):
+        self.model.wv.save_word2vec_format(os.path.join(self.model_path, filename))
+
+    def load_word2vec(self, filename):
+        self.model = KeyedVectors.load_word2vec_format(os.path.join(self.model_path, filename))
+        
+    def get_sim_words(self, word, top_n):
+        '''
+        top_n: number of words that has high similarity with word 
+        '''
+        sim_word = self.model.similar_by_word(word, topn=top_n)
+        return sim_word 
+    
+
+class DSMProcessor():
+    def __init__(self, data_path):
+        self.data_path = data_path 
