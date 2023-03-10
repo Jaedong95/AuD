@@ -15,7 +15,7 @@ _Model Architecture_
 
 ```bash
 # construct dsm-5 data 
-$ python 
+$ python data_construct.py --data_path {$DATA_PATH} --model_path {$MODEL_PATH}
 ```
 
 
