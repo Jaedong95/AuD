@@ -25,15 +25,15 @@ def main(args):
      # load pretrained tokenizer, config, model  
     tokenizer = BertTokenizer.from_pretrained(os.path.join(training_config.base_model, 'bert-tiny'), model_max_length=128)
     config = BertConfig.from_pretrained(os.path.join(training_config.base_model, 'bert-tiny', 'bert_config.json'))
-    config.max_position_embeddings = 128
     model = BertModel.from_pretrained(os.path.join(training_config.base_model, 'bert-tiny'), config=config)
+    config.max_position_embeddings = 128
     
     # process data 
     X_train = pd.read_csv(os.path.join(training_config.data_path, 'bws_score_train.csv'))
     X_val = pd.read_csv(os.path.join(training_config.data_path, 'bws_score_val.csv'))
     train_file = BertDataset(X_train)
     val_file = BertDataset(X_val)
-    bert_processor = BertProcessor(config, training_config, tokenizer)
+    bert_processor = BertProcessor(training_config, tokenizer)
     train_dataset = bert_processor.convert_data(train_file)
     val_dataset = bert_processor.convert_data(val_file)
     train_sampler = bert_processor.shuffle_data(train_dataset, 'train')
@@ -42,7 +42,7 @@ def main(args):
     val_dataloader = bert_processor.load_data(val_dataset, val_sampler)
 
     # train model 
-    model_reg = BertRegressor(config, model).to(training_config.device)  
+    model_reg = BertRegressor(config, model).to(training_config.device)    # add regression layer 
     bert_trainer = BertRegTrainer(config, training_config, model_reg, train_dataloader, val_dataloader)
     bert_trainer.set_seed()
     bert_trainer.train()
